@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "492977186108",
+    "firebase_url": "https://instamate-64302.firebaseio.com",
+    "project_id": "instamate-64302",
+    "storage_bucket": "instamate-64302.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492977186108:android:5b6303a1c0aba4bef3aa39",
+        "android_client_info": {
+          "package_name": "com.rizik.training.instamate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492977186108-t38a504mlfsemmblsj744lt8sosfuka8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rizik.training.instamate",
+            "certificate_hash": "ff8108cd5b5b9a5f1c2bea11546890a197b13f35"
+          }
+        },
+        {
+          "client_id": "492977186108-fjc9d05hoi7e99vkqf6no9m5j9crjgm5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA_uu3LciMVCZoXiouUz2g00cN3ZWPtCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492977186108-fjc9d05hoi7e99vkqf6no9m5j9crjgm5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

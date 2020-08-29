@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FragmentCari">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bar"
+        android:background="?android:windowBackground">
+
+        <androidx.appcompat.widget.Toolbar
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar">
+
+            <EditText
+                android:drawableStart="@drawable/ic_cari"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/e_text_cari"
+                android:background="@android:color/transparent"
+                android:hint="cari username"
+                android:textColorHint="@color/warnaPutih"
+                android:autofillHints="search"
+                android:inputType="textPersonName" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar"
+        android:id="@+id/recycler_view_cari" />
+
+    <TextView
+        android:id="@+id/text_view_gadauser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recycler_view_cari"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+</RelativeLayout>
