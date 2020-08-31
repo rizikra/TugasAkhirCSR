@@ -31,7 +31,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
 
     private Context context;
     private List<Comment> comments;
-    public static final String ID_PUBRISHER = "idpengapload";
+    public static final String ID_PUBLISHER = "idpengapload";
 
     public CommentAdapter(Context context, List<Comment> comments) {
         this.context = context;
@@ -60,7 +60,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra(ID_PUBRISHER, comment.getMrComment());
+                intent.putExtra(ID_PUBLISHER, comment.getMrComment());
                 context.startActivity(intent);
             }
         });
@@ -68,7 +68,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.MyViewHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, MainActivity.class);
-                intent.putExtra(ID_PUBRISHER, comment.getMrComment());
+                intent.putExtra(ID_PUBLISHER, comment.getMrComment());
                 context.startActivity(intent);
             }
         });

@@ -42,7 +42,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private ImageView imageViewClose, imageViewSave, imageViewPp;
     private TextView textViewUbahPp;
-    private MaterialEditText editTextFullname, editTextUsername, editTextBio;
+    private MaterialEditText editTextFullName, editTextUsername, editTextBio;
 
     //Firebase
     private FirebaseUser user;
@@ -64,7 +64,7 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 UserData userData = value.toObject(UserData.class);
-                editTextFullname.setText(userData.getFullname());
+                editTextFullName.setText(userData.getFullname());
                 editTextUsername.setText(userData.getUsername());
                 editTextBio.setText(userData.getBio());
                 Glide.with(getApplicationContext()).load(userData.getImageUrl()).into(imageViewPp);
@@ -99,7 +99,7 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String bio = editTextBio.getText().toString().trim();
-                String fullname = editTextFullname.getText().toString().trim();
+                String fullname = editTextFullName.getText().toString().trim();
                 String username = editTextUsername.getText().toString().trim();
                 ubahProfil(bio, fullname, username);
             }
@@ -123,7 +123,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private void uploadGmbar() {
         final ProgressDialog loadingUpload = new ProgressDialog(EditProfileActivity.this);
-        loadingUpload.setTitle("harap tunggu, gambar sedang diupload");
+        loadingUpload.setTitle("Harap tunggu, gambar sedang diupload...");
         loadingUpload.show();
 
         if (imageUri != null) {
@@ -178,7 +178,7 @@ public class EditProfileActivity extends AppCompatActivity {
         textViewUbahPp = findViewById(R.id.text_view_ubah_pp_edit_profile);
         editTextBio = findViewById(R.id.edt_bio_edit_profile);
         editTextUsername = findViewById(R.id.edt_username_edit_profile);
-        editTextFullname = findViewById(R.id.edt_full_name_edit_profile);
+        editTextFullName = findViewById(R.id.edt_full_name_edit_profile);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         storageReference = FirebaseStorage.getInstance().getReference("photos");

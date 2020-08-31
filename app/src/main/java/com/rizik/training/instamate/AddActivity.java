@@ -93,7 +93,6 @@ public class AddActivity extends AppCompatActivity {
             extension = mime.getExtensionFromMimeType(context.getContentResolver().getType(uri));
         } else {
             //If scheme is a File
-            //This will replace white spaces with %20 and also other special characters. This will avoid returning null values on file name with spaces and special characters.
             extension = MimeTypeMap.getFileExtensionFromUrl(Uri.fromFile(new File(uri.getPath())).toString());
 
         }
@@ -102,7 +101,7 @@ public class AddActivity extends AppCompatActivity {
 
     private void uploadGambar() {
         final ProgressDialog loadingUpload = new ProgressDialog(AddActivity.this);
-        loadingUpload.setMessage("sedang diupload, harap tunggu...");
+        loadingUpload.setMessage("Sedang diupload, harap tunggu...");
         loadingUpload.show();
 
         if (imageUri != null) {
@@ -139,7 +138,7 @@ public class AddActivity extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     loadingUpload.dismiss();
                                     startActivity(new Intent(AddActivity.this, MainActivity.class));
-                                    Toast.makeText(getApplicationContext(), "Berhasil input database", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Berhasil input Database", Toast.LENGTH_SHORT).show();
                                     finish();
                                 } else {
                                     Toast.makeText(AddActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -147,18 +146,18 @@ public class AddActivity extends AppCompatActivity {
                             }
                         });
                     } else {
-                        Toast.makeText(AddActivity.this, "anda belum memilih gambar", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddActivity.this, "Anda belum memilih gambar", Toast.LENGTH_SHORT).show();
                     }
                 }
             }).addOnCanceledListener(new OnCanceledListener() {
                 @Override
                 public void onCanceled() {
-                    Toast.makeText(AddActivity.this, "on canceleled listener", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddActivity.this, "On canceleled listener", Toast.LENGTH_SHORT).show();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(AddActivity.this, "on failure, " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddActivity.this, "On failure, " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

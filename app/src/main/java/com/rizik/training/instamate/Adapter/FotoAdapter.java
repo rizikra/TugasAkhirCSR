@@ -41,14 +41,14 @@ public class FotoAdapter extends RecyclerView.Adapter<FotoAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull FotoAdapter.MyViewHolder holder, int position) {
-        final Post postingan = postList.get(position);
-        Glide.with(context).load(postingan.getGambar()).into(holder.imageViewPostFoto);
+        final Post post = postList.get(position);
+        Glide.with(context).load(post.getGambar()).into(holder.imageViewPostFoto);
 
         holder.imageViewPostFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = context.getSharedPreferences(MainActivity.DATA_UID, Context.MODE_PRIVATE).edit();
-                editor.putString(CommentActivity.ID_POST, postingan.getIdUpload());
+                editor.putString(CommentActivity.ID_POST, post.getIdUpload());
                 editor.apply();
 
                 ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new PostDetailFragment()).commit();

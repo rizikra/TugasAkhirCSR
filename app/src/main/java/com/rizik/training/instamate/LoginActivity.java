@@ -115,12 +115,12 @@ public class LoginActivity extends AppCompatActivity {
     private boolean validasi() {
         boolean valid = true;
         if (editTextPassword.getText().toString().matches("")) {
-            editTextPassword.setError("harap isi password");
+            editTextPassword.setError("Harap isi password");
             editTextPassword.requestFocus();
             valid = false;
         }
         if (editTextEmail.getText().toString().matches("")) {
-            editTextEmail.setError("email tidak boleh kosong");
+            editTextEmail.setError("Email tidak boleh kosong");
             editTextEmail.requestFocus();
             valid = false;
         }
@@ -151,12 +151,12 @@ public class LoginActivity extends AppCompatActivity {
                             switch (errorcode) {
                                 case "ERROR_WRONG_PASSWORD":
                                     loadingLogin.setVisibility(View.GONE);
-                                    editTextPassword.setError("password salah");
+                                    editTextPassword.setError("Password salah");
                                     editTextPassword.requestFocus();
                                     break;
                                 case "ERROR_USER_NOT_FOUND":
                                     loadingLogin.setVisibility(View.GONE);
-                                    editTextEmail.setError("email belum terdaftar");
+                                    editTextEmail.setError("Email belum terdaftar");
                                     editTextEmail.requestFocus();
                                     break;
                             }

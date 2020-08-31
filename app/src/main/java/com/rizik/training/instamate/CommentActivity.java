@@ -78,13 +78,13 @@ public class CommentActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         Intent intent = getIntent();
         postid = intent.getStringExtra(ID_POST);
-        publisherId = intent.getStringExtra(CommentAdapter.ID_PUBRISHER);
+        publisherId = intent.getStringExtra(CommentAdapter.ID_PUBLISHER);
 
         textViewKirimComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (editTextComment.getText().toString().matches("")) {
-                    Toast.makeText(CommentActivity.this, "anda tidak bisa mengirimkan komentar kosong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CommentActivity.this, "Anda tidak bisa mengirimkan komentar kosong", Toast.LENGTH_SHORT).show();
                 } else {
                     tambahDataKomentar();
                 }
@@ -104,7 +104,7 @@ public class CommentActivity extends AppCompatActivity {
                 .add(dataComment).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
-                Toast.makeText(CommentActivity.this, "komen berhasil dikirim", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CommentActivity.this, "Komentar berhasil dikirim", Toast.LENGTH_SHORT).show();
                 addNotifikasi();
                 editTextComment.setText("");
             }
@@ -116,7 +116,7 @@ public class CommentActivity extends AppCompatActivity {
                 .document(publisherId);
         Map<String, Object> dataNotifikasi = new HashMap<>();
         dataNotifikasi.put("userId", user.getUid());
-        dataNotifikasi.put("text", "mengomentari: " + editTextComment.getText().toString());
+        dataNotifikasi.put("text", "Mengomentari: " + editTextComment.getText().toString());
         dataNotifikasi.put("idUpload", postid);
         dataNotifikasi.put("isPost", true);
         reference.set(dataNotifikasi);

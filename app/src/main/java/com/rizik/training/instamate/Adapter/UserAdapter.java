@@ -59,7 +59,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 .document(userid);
         Map<String, Object> dataNotifikasi = new HashMap<>();
         dataNotifikasi.put("userId", user.getUid());
-        dataNotifikasi.put("text", "mulai mengikuti");
+        dataNotifikasi.put("text", "Mulai Mengikuti");
         dataNotifikasi.put("idUpload", "");
         dataNotifikasi.put("isPost", false);
         reference.set(dataNotifikasi);
@@ -95,7 +95,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         holder.buttonFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (holder.buttonFollow.getText().toString().equals("ikuti")) {
+                if (holder.buttonFollow.getText().toString().equals("Ikuti")) {
                     Map<String, Object> dataFollowing = new HashMap<>();
                     dataFollowing.put(userData.getUserId(), true);
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -148,10 +148,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null && value.exists()) {
-                    button.setText("berhenti mengikuti");
+                    button.setText("Berhenti Mengikuti");
                     button.setBackground(context.getResources().getDrawable(R.drawable.custom_unfoll));
                 } else {
-                    button.setText("ikuti");
+                    button.setText("Ikuti");
                     button.setBackground(context.getResources().getDrawable(R.drawable.custom_follow));
                 }
             }

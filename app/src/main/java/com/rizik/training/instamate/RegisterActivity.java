@@ -29,6 +29,7 @@ import static android.view.View.GONE;
 
 public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = "RegisterActivity";
+
     private EditText editTextUserName, editTextFullName, editTextPassword, editTextKonfirmPassword, editTextEmail;
     private Button buttonRegister;
     private TextView textViewLogin;
@@ -68,9 +69,9 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 } else {
                     if (!editTextEmail.getText().toString().isEmpty()) {
-                        editTextEmail.setError("email tidak valid");
+                        editTextEmail.setError("Email tidak valid");
                     } else {
-                        editTextEmail.setError("email tidak boleh kosong");
+                        editTextEmail.setError("Email tidak boleh kosong");
                     }
                     editTextEmail.requestFocus();
                     loading.setVisibility(GONE);
@@ -89,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
         textViewLogin = findViewById(R.id.tv_login);
         loading = findViewById(R.id.progressBar);
 
-//        firebase
+        //firebase
         auth = FirebaseAuth.getInstance();
 
     }
@@ -97,32 +98,32 @@ public class RegisterActivity extends AppCompatActivity {
     private boolean validasi() {
         boolean valid = true;
         if (editTextPassword.getText().toString().matches("")) {
-            editTextPassword.setError("password tidak boleh kosong");
+            editTextPassword.setError("Password tidak boleh kosong");
             editTextPassword.requestFocus();
             valid = false;
         } else if (editTextPassword.getText().toString().length() < 6) {
-            editTextPassword.setError("password harus berisi minimal 6 karakter");
+            editTextPassword.setError("Password harus berisi minimal 6 karakter");
             editTextPassword.requestFocus();
             valid = false;
         }
 
         if (!editTextKonfirmPassword.getText().toString().equalsIgnoreCase(editTextPassword.getText().toString())) {
-            editTextKonfirmPassword.setError("password tidak sama");
+            editTextKonfirmPassword.setError("Password tidak sama");
             editTextKonfirmPassword.requestFocus();
             valid = false;
         } else if (editTextKonfirmPassword.getText().toString().matches("")) {
-            editTextKonfirmPassword.setError("harap isi konfirmasi password");
+            editTextKonfirmPassword.setError("Harap isi konfirmasi password");
             editTextKonfirmPassword.requestFocus();
             valid = false;
         }
 
         if (editTextFullName.getText().toString().matches("")) {
-            editTextPassword.setError("harap isi field ini");
+            editTextPassword.setError("Harap isi field ini");
             editTextPassword.requestFocus();
             valid = false;
         }
         if (editTextUserName.getText().toString().matches("")) {
-            editTextPassword.setError("harap isi field ini");
+            editTextPassword.setError("Harap isi field ini");
             editTextPassword.requestFocus();
             valid = false;
         }
@@ -165,7 +166,7 @@ public class RegisterActivity extends AppCompatActivity {
                             String errorcode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
                             if ("ERROR_EMAIL_ALREADY_IN_USE".equals(errorcode)) {
                                 loading.setVisibility(View.GONE);
-                                editTextEmail.setError("email sudah terdaftar, harap login saja");
+                                editTextEmail.setError("Email sudah terdaftar, harap login saja");
                                 editTextEmail.requestFocus();
                             }
                         }

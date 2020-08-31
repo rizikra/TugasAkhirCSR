@@ -29,6 +29,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     private static final String TAG = "HomeFragment";
+
     private RecyclerView recyclerView;
     private ProgressBar loading;
     private PostAdapter adapter;

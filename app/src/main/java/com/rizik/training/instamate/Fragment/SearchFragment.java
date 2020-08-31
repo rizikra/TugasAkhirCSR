@@ -50,7 +50,8 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_search, container, false);        recyclerView = view.findViewById(R.id.recycler_view_cari);
+        final View view = inflater.inflate(R.layout.fragment_search, container, false);
+        recyclerView = view.findViewById(R.id.recycler_view_cari);
         textViewNoUser = view.findViewById(R.id.text_view_noUser);
 
         recyclerView.setHasFixedSize(true);
@@ -102,7 +103,7 @@ public class SearchFragment extends Fragment {
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 if (users.isEmpty()) {
                     textViewNoUser.setVisibility(View.VISIBLE);
-                    String template = "tidak ada user dengan nama " + key + " ditemukan";
+                    String template = "Tidak ada user dengan nama " + key + " ditemukan";
                     textViewNoUser.setText(template);
                 } else {
                     textViewNoUser.setVisibility(View.GONE);

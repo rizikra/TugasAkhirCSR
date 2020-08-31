@@ -103,7 +103,7 @@ public PostAdapter(Context context, List<Post> listPost) {
             public void onClick(View view) {
                 Intent intent = new Intent(context, CommentActivity.class);
                 intent.putExtra(CommentActivity.ID_POST, post.getIdUpload());
-                intent.putExtra(CommentAdapter.ID_PUBRISHER, post.getUploader());
+                intent.putExtra(CommentAdapter.ID_PUBLISHER, post.getUploader());
                 context.startActivity(intent);
             }
         });
@@ -112,7 +112,7 @@ public PostAdapter(Context context, List<Post> listPost) {
             public void onClick(View view) {
                 Intent intent = new Intent(context, CommentActivity.class);
                 intent.putExtra(CommentActivity.ID_POST, post.getIdUpload());
-                intent.putExtra(CommentAdapter.ID_PUBRISHER, post.getUploader());
+                intent.putExtra(CommentAdapter.ID_PUBLISHER, post.getUploader());
                 context.startActivity(intent);
             }
         });

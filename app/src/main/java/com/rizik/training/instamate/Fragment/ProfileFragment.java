@@ -232,11 +232,11 @@ public class ProfileFragment extends Fragment {
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 assert value != null;
                 if (value.exists()) {
-                    buttonEditProfile.setText("berhenti mengikuti");
+                    buttonEditProfile.setText("Berhenti Mengikuti");
                     buttonEditProfile.setBackground(getResources().getDrawable(R.drawable.custom_unfoll));
                 } else {
                     buttonEditProfile.setBackground(getResources().getDrawable(R.drawable.custom_follow));
-                    buttonEditProfile.setText("ikuti");
+                    buttonEditProfile.setText("Ikuti");
 
                 }
             }
@@ -303,7 +303,7 @@ public class ProfileFragment extends Fragment {
                 .document(profileId);
         Map<String, Object> dataNotifikasi = new HashMap<>();
         dataNotifikasi.put("userId", user.getUid());
-        dataNotifikasi.put("text", "mulai mengikuti anda");
+        dataNotifikasi.put("text", "Mulai Mengikuti Anda");
         dataNotifikasi.put("idUpload", "");
         dataNotifikasi.put("isPost", false);
         reference.set(dataNotifikasi);

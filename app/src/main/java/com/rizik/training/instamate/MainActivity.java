@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         Bundle intent = getIntent().getExtras();
         if (intent != null) {
-            String pengapload = intent.getString(CommentAdapter.ID_PUBRISHER);
+            String uploader = intent.getString(CommentAdapter.ID_PUBLISHER);
             SharedPreferences.Editor editor = getSharedPreferences(DATA_UID, MODE_PRIVATE).edit();
-            editor.putString(KEY, pengapload);
+            editor.putString(KEY, uploader);
             editor.apply();
 
             getSupportFragmentManager().beginTransaction()
