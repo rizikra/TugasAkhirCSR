@@ -115,10 +115,10 @@ public class CommentActivity extends AppCompatActivity {
         DocumentReference reference = FirebaseFirestore.getInstance().collection("notifikasi")
                 .document(publisherId);
         Map<String, Object> dataNotifikasi = new HashMap<>();
-        dataNotifikasi.put("id_user", user.getUid());
+        dataNotifikasi.put("userId", user.getUid());
         dataNotifikasi.put("text", "mengomentari: " + editTextComment.getText().toString());
-        dataNotifikasi.put("idupload", postid);
-        dataNotifikasi.put("ispost", true);
+        dataNotifikasi.put("idUpload", postid);
+        dataNotifikasi.put("isPost", true);
         reference.set(dataNotifikasi);
     }
 

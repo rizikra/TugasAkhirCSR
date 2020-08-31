@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Fragment fragmentAktif;
     public static final String DATA_UID = "PREF_UID";
-    public static final String KEY = "idprofile";
+    public static final String KEY = "profileId";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

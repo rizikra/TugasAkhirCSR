@@ -16,7 +16,10 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.rizik.training.instamate.CommentActivity;
+import com.rizik.training.instamate.Fragment.PostDetailFragment;
+import com.rizik.training.instamate.Fragment.ProfileFragment;
 import com.rizik.training.instamate.MainActivity;
+import com.rizik.training.instamate.Model.Notifikasi;
 import com.rizik.training.instamate.Model.Post;
 import com.rizik.training.instamate.Model.UserData;
 import com.rizik.training.instamate.R;
@@ -50,14 +53,14 @@ public class NotifikasiAdapter extends RecyclerView.Adapter<NotifikasiAdapter.My
     @Override
     public void onBindViewHolder(@NonNull NotifikasiAdapter.MyViewHolder holder, int position) {
         final Notifikasi notifikasi = notifikasiList.get(position);
-        Log.d(TAG, "onBindViewHolder: notif pengapload" + notifikasi);
+        Log.d(TAG, "onBindViewHolder: notif pengapload" + notifikasi.getUserId());
 
         holder.textViewText.setText(notifikasi.getText());
-        getUserInfo(holder.imageViewPp, holder.textViewUsername, notifikasi.getId_user());
+        getUserInfo(holder.imageViewPp, holder.textViewUsername, notifikasi.getUserId());
 
-        if (notifikasi.isIspost()) {
+        if (notifikasi.isPost()) {
             holder.imageViewPostingan.setVisibility(View.VISIBLE);
-            getPostGambar(holder.imageViewPostingan, notifikasi.getIdupload());
+            getPostGambar(holder.imageViewPostingan, notifikasi.getIdUpload());
         } else {
             holder.imageViewPostingan.setVisibility(View.GONE);
         }
@@ -66,16 +69,16 @@ public class NotifikasiAdapter extends RecyclerView.Adapter<NotifikasiAdapter.My
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor = context.getSharedPreferences(MainActivity.DATA_UID, Context.MODE_PRIVATE).edit();
-                if (notifikasi.isIspost()) {
-                    editor.putString(CommentActivity.ID_POST, notifikasi.getIdupload());
+                if (notifikasi.isPost()) {
+                    editor.putString(CommentActivity.ID_POST, notifikasi.getIdUpload());
                     editor.apply();
 
                     ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new PostDetailFragment()).commit();
                 } else {
-                    editor.putString(MainActivity.KEY, notifikasi.getId_user());
+                    editor.putString(MainActivity.KEY, notifikasi.getUserId());
                     editor.apply();
 
-                    ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new FragmentProfile()).commit();
+                    ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new ProfileFragment()).commit();
                 }
             }
         });

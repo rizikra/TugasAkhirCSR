@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.rizik.training.instamate.Adapter.NotifikasiAdapter;
+import com.rizik.training.instamate.Model.Notifikasi;
 import com.rizik.training.instamate.R;
 
 import java.util.ArrayList;
@@ -60,6 +62,7 @@ public class LikeFragment extends Fragment {
                         //notifikasiList.clear();
                         for (QueryDocumentSnapshot snapshot : value) {
                             Notifikasi notifikasi = snapshot.toObject(Notifikasi.class);
+                            Log.d(TAG, "onEvent: " + notifikasi.getUserId());
                             notifikasiList.add(notifikasi);
                         }
                         Collections.reverse(notifikasiList);

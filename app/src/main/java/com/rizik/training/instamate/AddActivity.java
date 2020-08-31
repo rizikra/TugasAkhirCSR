@@ -129,10 +129,10 @@ public class AddActivity extends AppCompatActivity {
                         String idUpload = reference.document().getId();
 
                         Map<String, Object> dataUpload = new HashMap<>();
-                        dataUpload.put("idupload", idUpload);
+                        dataUpload.put("idUpload", idUpload);
                         dataUpload.put("gambar", uriKu);
                         dataUpload.put("deskripsi", editTextDeskripsi.getText().toString().trim());
-                        dataUpload.put("pengapload", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        dataUpload.put("uploader", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                         reference.document(idUpload).set(dataUpload).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override

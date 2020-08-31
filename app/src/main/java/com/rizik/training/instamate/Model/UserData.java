@@ -7,6 +7,10 @@ public class UserData {
     private String bio;
     private String imageUrl;
 
+    public UserData(){
+
+    }
+
     public UserData(String userId, String username, String fullname, String bio, String imageUrl) {
         this.userId = userId;
         this.username = username;

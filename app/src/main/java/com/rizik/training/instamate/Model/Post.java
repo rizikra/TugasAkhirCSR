@@ -6,6 +6,10 @@ public class Post {
     private String uploader;
     private String deskripsi;
 
+    public Post(){
+
+    }
+
     public Post(String idUpload, String gambar, String uploader, String deskripsi) {
         this.idUpload = idUpload;
         this.gambar = gambar;

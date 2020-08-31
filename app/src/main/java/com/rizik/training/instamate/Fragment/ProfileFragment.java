@@ -145,7 +145,7 @@ public class ProfileFragment extends Fragment {
                         logout();
                         Toast.makeText(getContext(), "logout", Toast.LENGTH_SHORT).show();
                     }
-                }).setNegativeButton("gajadidah", new DialogInterface.OnClickListener() {
+                }).setNegativeButton("Gak", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -302,10 +302,10 @@ public class ProfileFragment extends Fragment {
         DocumentReference reference = FirebaseFirestore.getInstance().collection("notifikasi")
                 .document(profileId);
         Map<String, Object> dataNotifikasi = new HashMap<>();
-        dataNotifikasi.put("id_user", user.getUid());
-        dataNotifikasi.put("text", "muai mengikuti anda");
-        dataNotifikasi.put("idupload", "");
-        dataNotifikasi.put("ispost", false);
+        dataNotifikasi.put("userId", user.getUid());
+        dataNotifikasi.put("text", "mulai mengikuti anda");
+        dataNotifikasi.put("idUpload", "");
+        dataNotifikasi.put("isPost", false);
         reference.set(dataNotifikasi);
     }
 

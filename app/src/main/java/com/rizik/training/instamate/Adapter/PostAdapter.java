@@ -41,7 +41,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder>  {
 public Context context;
 public List<Post> listPost;
-private static final String TAG="PostAdapter";
+private static final String TAG ="PostAdapter";
 public static final String ID_UPLOAD = "idUpload";
 
 public PostAdapter(Context context, List<Post> listPost) {
@@ -256,10 +256,10 @@ public PostAdapter(Context context, List<Post> listPost) {
         DocumentReference reference = FirebaseFirestore.getInstance().collection("notifikasi")
                 .document(userid);
         Map<String, Object> dataNotifikasi = new HashMap<>();
-        dataNotifikasi.put("id_user", user.getUid());
+        dataNotifikasi.put("userId", user.getUid());
         dataNotifikasi.put("text", "menyukai postingan");
-        dataNotifikasi.put("idupload", idupload);
-        dataNotifikasi.put("ispost", true);
+        dataNotifikasi.put("idUpload", idupload);
+        dataNotifikasi.put("isPost", true);
         reference.set(dataNotifikasi);
     }
 }

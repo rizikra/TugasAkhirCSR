@@ -5,6 +5,10 @@ public class Comment {
     private String text;
     private String mrComment;
 
+    public Comment(){
+
+    }
+
     public Comment(String text, String mrComment) {
         this.text = text;
         this.mrComment = mrComment;

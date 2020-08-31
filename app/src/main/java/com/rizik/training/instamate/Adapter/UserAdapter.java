@@ -58,10 +58,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         DocumentReference reference = FirebaseFirestore.getInstance().collection("notifikasi")
                 .document(userid);
         Map<String, Object> dataNotifikasi = new HashMap<>();
-        dataNotifikasi.put("id_user", user.getUid());
+        dataNotifikasi.put("userId", user.getUid());
         dataNotifikasi.put("text", "mulai mengikuti");
-        dataNotifikasi.put("idupload", "");
-        dataNotifikasi.put("ispost", false);
+        dataNotifikasi.put("idUpload", "");
+        dataNotifikasi.put("isPost", false);
         reference.set(dataNotifikasi);
     }
 
