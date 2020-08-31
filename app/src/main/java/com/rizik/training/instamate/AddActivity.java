@@ -78,7 +78,6 @@ public class AddActivity extends AppCompatActivity {
 
             imageViewChoose.setImageURI(imageUri);
         } else {
-            Toast.makeText(this, "ada yang salah, tergantung amal perbuatan \uD83D\uDE14 ", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(AddActivity.this, MainActivity.class));
             finish();
         }

@@ -99,7 +99,7 @@ public class CommentActivity extends AppCompatActivity {
     public void tambahDataKomentar() {
         Map<String, Object> dataComment = new HashMap<>();
         dataComment.put("text", editTextComment.getText().toString().trim());
-        dataComment.put("mrcomment", user.getUid());
+        dataComment.put("mrComment", user.getUid());
         FirebaseFirestore.getInstance().collection("comments").document(postid).collection(postid)
                 .add(dataComment).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override

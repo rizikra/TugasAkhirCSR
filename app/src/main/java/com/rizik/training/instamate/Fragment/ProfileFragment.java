@@ -136,16 +136,16 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 final AlertDialog.Builder alert = new AlertDialog.Builder(Objects.requireNonNull(getContext()));
-                alert.setTitle("Woro Woro :D");
+                alert.setTitle("LOGOUT");
                 alert.setCancelable(false);
                 alert.setMessage("Yakin ingin logout?");
-                alert.setPositiveButton("logout", new DialogInterface.OnClickListener() {
+                alert.setPositiveButton("YA", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         logout();
-                        Toast.makeText(getContext(), "logout", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "YA", Toast.LENGTH_SHORT).show();
                     }
-                }).setNegativeButton("Gak", new DialogInterface.OnClickListener() {
+                }).setNegativeButton("GAK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
