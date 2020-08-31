@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginVertical="5dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="0dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="80dp"
+        app:civ_border_color="@color/White"
+        app:civ_border_width="2dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        android:id="@+id/pp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/pp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/t_view_username"
+            android:text="Username"
+            android:maxLines="1"
+            android:textColor="@color/Black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/t_view_fullnama"
+            android:textColor="@color/Black"
+            android:text="Full Name"
+            android:maxLines="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_follow"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:background="@drawable/custom_follow" />
+</RelativeLayout>

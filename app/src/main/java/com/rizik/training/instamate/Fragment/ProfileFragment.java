@@ -37,6 +37,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.rizik.training.instamate.Adapter.FotoAdapter;
 import com.rizik.training.instamate.LoginActivity;
 import com.rizik.training.instamate.MainActivity;
 import com.rizik.training.instamate.Model.Post;
