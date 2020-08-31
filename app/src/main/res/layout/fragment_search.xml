@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.FragmentCari">
+    tools:context=".Fragment.SearchFragment">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -13,19 +13,19 @@
         android:background="?android:windowBackground">
 
         <androidx.appcompat.widget.Toolbar
-            android:background="@color/colorPrimary"
+            android:background="@drawable/white_grey_border_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar">
 
             <EditText
-                android:drawableStart="@drawable/ic_cari"
+                android:drawableStart="@drawable/ic_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/e_text_cari"
                 android:background="@android:color/transparent"
-                android:hint="cari username"
-                android:textColorHint="@color/warnaPutih"
+                android:hint="Cari Username"
+                android:textColorHint="@color/Black"
                 android:autofillHints="search"
                 android:inputType="textPersonName" />
         </androidx.appcompat.widget.Toolbar>
@@ -38,7 +38,7 @@
         android:id="@+id/recycler_view_cari" />
 
     <TextView
-        android:id="@+id/text_view_gadauser"
+        android:id="@+id/text_view_noUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/recycler_view_cari"
