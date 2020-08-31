@@ -12,7 +12,11 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.rizik.training.instamate.Adapter.CommentAdapter;
 import com.rizik.training.instamate.Fragment.HomeFragment;
+import com.rizik.training.instamate.Fragment.LikeFragment;
+import com.rizik.training.instamate.Fragment.ProfileFragment;
+import com.rizik.training.instamate.Fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
 
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container_fragment, new FragmentProfile()).commit();
+                    .replace(R.id.container_fragment, new ProfileFragment()).commit();
         } else {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container_fragment, new HomeFragment()).commit();
@@ -59,20 +63,20 @@ public class MainActivity extends AppCompatActivity {
                             fragmentAktif = new HomeFragment();
                             break;
                         case R.id.suka_navigasi_bawah:
-                            fragmentAktif = new FragmentSuka();
+                            fragmentAktif = new LikeFragment();
                             break;
                         case R.id.cari_navigasi_bawah:
-                            fragmentAktif = new FragmentCari();
+                            fragmentAktif = new SearchFragment();
                             break;
                         case R.id.add_navigasi_bawah:
                             fragmentAktif = null;
-                            startActivity(new Intent(MainActivity.this, AktivityAdd.class));
+                            startActivity(new Intent(MainActivity.this, AddActivity.class));
                             break;
                         case R.id.profile_navigasi_bawah:
                             @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = getSharedPreferences(DATA_UID, MODE_PRIVATE).edit();
                             editor.putString(KEY, FirebaseAuth.getInstance().getCurrentUser().getUid());
                             editor.apply();
-                            fragmentAktif = new FragmentProfile();
+                            fragmentAktif = new ProfileFragment();
                             break;
                     }
 

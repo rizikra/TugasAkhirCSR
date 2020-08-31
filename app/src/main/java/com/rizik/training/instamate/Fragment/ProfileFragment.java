@@ -38,10 +38,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.rizik.training.instamate.Adapter.FotoAdapter;
+import com.rizik.training.instamate.EditProfileActivity;
 import com.rizik.training.instamate.LoginActivity;
 import com.rizik.training.instamate.MainActivity;
 import com.rizik.training.instamate.Model.Post;
 import com.rizik.training.instamate.Model.UserData;
+import com.rizik.training.instamate.PhotoProfileActivity;
 import com.rizik.training.instamate.R;
 
 import java.util.ArrayList;
@@ -166,7 +168,7 @@ public class ProfileFragment extends Fragment {
                         }
 
                         UserData userData = value.toObject(UserData.class);
-                        Intent intent = new Intent(getContext(), LihatPpActivty.class);
+                        Intent intent = new Intent(getContext(), PhotoProfileActivity.class);
                         intent.putExtra(KEY_IMAGE, userData.getImageUrl());
                         intent.putExtra(USERNAME, userData.getUsername());
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

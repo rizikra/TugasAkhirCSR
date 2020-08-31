@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_comment"
+        android:background="@drawable/white_grey_border_top" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view_comment"
+        android:layout_below="@id/toolbar_comment"
+        android:layout_above="@id/bawah_comment" />
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bawah_comment"
+        android:background="@color/White"
+        android:padding="4dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:civ_border_overlay="true"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/colorPrimary"
+            android:id="@+id/image_view_pp_comment" />
+
+        <EditText
+            android:layout_toRightOf="@id/image_view_pp_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tulis Komentar Disini"
+            android:id="@+id/e_text_tambah_commentar"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:background="@android:color/transparent" />
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/text_kirim_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kirim"
+            android:textColor="@color/colorPrimaryDark" />
+    </RelativeLayout>
+
+</RelativeLayout>

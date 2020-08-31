@@ -26,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.rizik.training.instamate.Adapter.UserAdapter;
 import com.rizik.training.instamate.Model.UserData;
 import com.rizik.training.instamate.R;
 
@@ -127,5 +128,4 @@ public class SearchFragment extends Fragment {
                     }
                 });
     }
-}
 }

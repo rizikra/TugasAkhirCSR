@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.rizik.training.instamate.Adapter.NotifikasiAdapter;
 import com.rizik.training.instamate.R;
 
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class LikeFragment extends Fragment {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         assert value != null;
-//                        notifikasiList.clear();
+                        //notifikasiList.clear();
                         for (QueryDocumentSnapshot snapshot : value) {
                             Notifikasi notifikasi = snapshot.toObject(Notifikasi.class);
                             notifikasiList.add(notifikasi);

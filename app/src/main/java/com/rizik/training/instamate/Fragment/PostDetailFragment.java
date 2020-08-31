@@ -19,6 +19,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.rizik.training.instamate.Adapter.PostAdapter;
+import com.rizik.training.instamate.CommentActivity;
 import com.rizik.training.instamate.MainActivity;
 import com.rizik.training.instamate.Model.Post;
 import com.rizik.training.instamate.R;
@@ -65,5 +66,4 @@ public class PostDetailFragment extends Fragment {
             }
         });
     }
-}
 }

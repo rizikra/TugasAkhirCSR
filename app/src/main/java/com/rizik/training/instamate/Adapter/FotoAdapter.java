@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.rizik.training.instamate.CommentActivity;
 import com.rizik.training.instamate.Fragment.PostDetailFragment;
 import com.rizik.training.instamate.MainActivity;
 import com.rizik.training.instamate.Model.Post;

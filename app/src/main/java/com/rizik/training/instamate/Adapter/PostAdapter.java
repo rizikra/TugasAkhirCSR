@@ -21,6 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
+import com.rizik.training.instamate.CommentActivity;
+import com.rizik.training.instamate.Fragment.PostDetailFragment;
+import com.rizik.training.instamate.Fragment.ProfileFragment;
 import com.rizik.training.instamate.MainActivity;
 import com.rizik.training.instamate.Model.Post;
 import com.rizik.training.instamate.Model.UserData;
@@ -84,7 +87,7 @@ public PostAdapter(Context context, List<Post> listPost) {
                     FirebaseFirestore.getInstance().collection("suka")
                             .document(post.getIdUpload()).set(data, SetOptions.merge());
 
-                    addNotifikasi(post.getUploader(), post.getIdUpload()));
+                    addNotifikasi(post.getUploader(), post.getIdUpload());
                 } else {
                     final Map<String, Object> data = new HashMap<>();
                     data.put(user.getUid(), FieldValue.delete());
@@ -98,8 +101,8 @@ public PostAdapter(Context context, List<Post> listPost) {
         holder.imageViewComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ComentAktivitas.class);
-                intent.putExtra(ComentAktivitas.ID_POST, post.getIdUpload());
+                Intent intent = new Intent(context, CommentActivity.class);
+                intent.putExtra(CommentActivity.ID_POST, post.getIdUpload());
                 intent.putExtra(CommentAdapter.ID_PUBRISHER, post.getUploader());
                 context.startActivity(intent);
             }
@@ -107,8 +110,8 @@ public PostAdapter(Context context, List<Post> listPost) {
         holder.textViewComment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ComentAktivitas.class);
-                intent.putExtra(ComentAktivitas.ID_POST, post.getIdUpload());
+                Intent intent = new Intent(context, CommentActivity.class);
+                intent.putExtra(CommentActivity.ID_POST, post.getIdUpload());
                 intent.putExtra(CommentAdapter.ID_PUBRISHER, post.getUploader());
                 context.startActivity(intent);
             }
@@ -120,7 +123,7 @@ public PostAdapter(Context context, List<Post> listPost) {
                 editor.putString(MainActivity.KEY, post.getUploader());
                 editor.apply();
 
-                ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new FragmentProfile()).commit();
+                ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new ProfileFragment()).commit();
             }
         });
         holder.textViewUsername.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +133,7 @@ public PostAdapter(Context context, List<Post> listPost) {
                 editor.putString(MainActivity.KEY, post.getUploader());
                 editor.apply();
 
-                ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new FragmentProfile()).commit();
+                ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new ProfileFragment()).commit();
             }
         });
         holder.textViewPengapload.setOnClickListener(new View.OnClickListener() {
@@ -140,7 +143,7 @@ public PostAdapter(Context context, List<Post> listPost) {
                 editor.putString(MainActivity.KEY, post.getUploader());
                 editor.apply();
 
-                ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new FragmentProfile()).commit();
+                ((FragmentActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment, new ProfileFragment()).commit();
             }
         });
 
